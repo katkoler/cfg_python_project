@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+import json
 
 app = Flask("my_first_app")
 
@@ -65,7 +66,11 @@ def cfg_studnets():
 			students.append(name)
 	return render_template("index.html", members=students)
 
-
+# @app.route("/weather/<location>")
+# def weather(location):
+#   file = json.load("./static/weather_data.json")
+#   print(file)
+#   return render_template("index.html", members=file)
 
 app.run(debug=True)
 
