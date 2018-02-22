@@ -1,6 +1,28 @@
 {% include "header.html" %}
 
 <h1>Hello {{ user }}!</h1>
+
+{% if age > 18 %}
+  <p>Maybe you can drink!</p>
+{% else %}
+  <p>Naughty! You're too young to drink!</p>
+{% endif %}
+
+<h2>{{ name }}</h2>
+
+<!-- If name has the value "Darren", the above
+will be converted to the following by Jinja2: -->
+<h2>Darren</h2>
+
+<!-- "DARREN" will end up between the <h2> when
+converted by Jinja2 -->
+<h2>{{ name.upper() }}</h2>
+
+<!-- Assume shopping_list = ["apple", "pear"],
+then "apple" will end up between the <p>
+when converted by Jinja2 -->
+<p>{{ shopping_list[0] }}</p>
+
 </body>
 
 </html>

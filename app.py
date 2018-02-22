@@ -11,16 +11,18 @@ def hello():
     return 'Hi'
 
 @app.route("/home")
-def home():
+def home_page():
   return render_template("index.html")
 
 @app.route("/about")
-def about():
+def about_page():
   return render_template("about.html")
 
+
+# app.route("/contact")(lambda: render_template("contact.html")) 
 @app.route("/contact")
-def contact():
-  return render_template("contact.html")  
+def contact_page():
+  return render_template("contact.html")
 
 
 @app.route('/<number1>/<number2>') #captures whatever you put in <x> and renders it into html
@@ -46,6 +48,22 @@ def get_feedback():
 
   return render_template("feedback.html", form_data=data)
 
+with open("./static/python_course_members.txt") as input_file:
+    python_course_members = [member.strip() for member in input_file]
+
+not_student = ["Pauline", "Lakshika", "Darren", "Nina", "Simon"]
+
+@app.route("/shefcodefirst-members")
+def cfg_members():
+	return render_template("index.html", members=python_course_members)
+
+@app.route("/shefcodefirst-members/students")
+def cfg_studnets():
+	students = []
+	for name in python_course_members:
+		if name not in not_student:
+			students.append(name)
+	return render_template("index.html", members=students)
 
 
 
