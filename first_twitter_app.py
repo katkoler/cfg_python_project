@@ -1,9 +1,9 @@
 import tweepy
 
-consumer_key = 'tuS2Slo9gVd0398NXscLng2Pd'
-consumer_secret = 'JPEju0YNRHayzpOfQ3xEDvot2IiCLb8hxrHPyrFP2GVBYzXQEE'
-access_token = '186115958-MwXEPydpdSESHq3rCKphSMmUzDHiETTmx3aqRU1Z'
-access_token_sec = 'PAL73thLb6ZSKLjK3cRC2VXLn9EqbfcMzm2r2eQQ7A6rr'
+consumer_key = 'xxx'
+consumer_secret = 'xxx'
+access_token = 'xxx'
+access_token_sec = 'xxx'
 
 
 def authenticate():
