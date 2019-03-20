@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 import json
+import os
 
 app = Flask("my_first_app")
 
@@ -72,6 +73,11 @@ def cfg_studnets():
 #   print(file)
 #   return render_template("index.html", members=file)
 
-app.run(debug=True)
+# app.run(debug=True)
+
+if 'PORT' in os.environ:
+     app.run(host='0.0.0.0', port=int(os.environ['PORT']))
+else:
+     app.run(debug=True)
 
 

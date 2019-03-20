@@ -1,9 +1,10 @@
 import tweepy
+import config
 
-consumer_key = 'xxx'
-consumer_secret = 'xxx'
-access_token = 'xxx'
-access_token_sec = 'xxx'
+consumer_key = os.environ["twitter_consumer_key"]
+consumer_secret = os.environ["twitter_consumer_secret"]
+access_token = os.environ["twitter_access_token"]
+access_token_sec = os.environ["twitter_access_token_sec"]
 
 
 def authenticate():
